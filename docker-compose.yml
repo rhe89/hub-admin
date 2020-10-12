@@ -10,7 +10,7 @@ services:
     admin-web:
         container_name: "admin_web"
         build: 
-            context: ./src/Admin
+            context: ./hub-admin
             dockerfile: Admin.Web.Ui/Dockerfile
         image: "admin/web"
         hostname: "admin-web"
