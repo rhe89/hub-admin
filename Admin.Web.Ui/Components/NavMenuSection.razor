@@ -1,0 +1,38 @@
+﻿<li class="nav-item px-3">
+    <h4 class="text-white" aria-hidden="true">@Header</h4> 
+</li>
+<li class="nav-item">
+    <NavLink class="nav-link" href="@SettingsUri" Match="NavLinkMatch.All">
+        <span class="oi oi-wrench" aria-hidden="true"></span>
+        <span class="item-text">Settings</span>
+    </NavLink>
+</li>
+<li class="nav-item">
+    <NavLink class="nav-link" href="@BackgroundTaskConfigurationsUri" Match="NavLinkMatch.All">
+        <span class="oi oi-clock" aria-hidden="true"></span>
+        <span class="item-text">BackgroundTask Config</span> 
+    </NavLink>
+</li>
+<li class="nav-item">
+    <NavLink class="nav-link" href="@WorkerLogsUri" Match="NavLinkMatch.All">
+        <span class="oi oi-bug" aria-hidden="true"></span>
+        <span class="item-text">Worker logs</span> 
+    </NavLink>
+</li>
+
+@code {
+
+    [Parameter]
+    public string Header { get; set; }
+    
+    [Parameter]
+    public string UriPrefix { get; set; }
+    
+    [Parameter]
+    public bool IsDesktop { get; set; }
+
+    private string SettingsUri => $"{UriPrefix}/settings";
+    private string BackgroundTaskConfigurationsUri => $"{UriPrefix}/backgroundtaskconfigurations";
+    private string WorkerLogsUri => $"{UriPrefix}/workerlogs";
+
+}

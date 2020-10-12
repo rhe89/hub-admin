@@ -1,0 +1,45 @@
+﻿@using global::Admin.ViewModels
+@using Admin.Services
+
+@typeparam TApiClient
+
+@if (_settingsViewModel == null)
+{
+    return;
+}
+
+@if (!_settingsViewModel.Success)
+{
+    <p class="alert alert-danger">
+        Feil oppstod: @_settingsViewModel?.ErrorMessage
+    </p>
+    return;
+}
+
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>Innstilling</th>
+            <th>Verdi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var setting in _settingsViewModel.Settings)
+        {
+            <Row SettingViewModel="@setting" 
+                 SettingService="@SettingService"/>
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public ISettingService<TApiClient> SettingService { get; set; }
+
+    private SettingsViewModel _settingsViewModel;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        _settingsViewModel = await SettingService.GetSettings();
+    }
+}

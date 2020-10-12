@@ -1,0 +1,8 @@
+﻿@page "/coinbase/settings"
+
+@using Admin.Services
+@using Admin.Integration
+
+@inject ISettingService<ICoinbaseApiConnector> SettingsService
+
+<Admin.Web.Ui.Components.Settings.Table SettingService="@SettingsService" />

@@ -1,0 +1,8 @@
+﻿@page "/coinbase/workerlogs"
+
+@using Admin.Services
+@using Admin.Integration
+
+@inject IWorkerLogService<ICoinbaseApiConnector> WorkerLogService
+
+<Admin.Web.Ui.Components.WorkerLogs.Table WorkerLogService="@WorkerLogService" />
