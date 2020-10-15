@@ -34,7 +34,9 @@ namespace Admin.Services
             var response = await _apiConnector.GetSettings();
 
             if (!response.Success)
+            {
                 return ViewModelMappings.GetErrorViewModel<SettingsViewModel, SettingDto[]>(response);
+            }
 
             return new SettingsViewModel
             {
@@ -52,12 +54,16 @@ namespace Admin.Services
             var isNumber = int.TryParse(value, out var number);
 
             if (isNumber)
+            {
                 return number;
+            }
             
             var isDateTime = DateTime.TryParse(value, out var date);
 
             if (isDateTime)
+            {
                 return date;
+            }
 
             return value;
         }

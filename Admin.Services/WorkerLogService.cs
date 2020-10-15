@@ -22,7 +22,9 @@ namespace Admin.Services
             var workerLogsResponse = await _apiConnector.GetWorkerLogs(ageInDays);
             
             if (!workerLogsResponse.Success)
+            {
                 return ViewModelMappings.GetErrorViewModel<WorkerLogsViewModel, WorkerLogDto[]>(workerLogsResponse);
+            }
 
             return new WorkerLogsViewModel
             {

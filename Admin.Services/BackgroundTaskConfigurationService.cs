@@ -33,7 +33,11 @@ namespace Admin.Services
             var response = await _apiConnector.GetBackgroundTaskConfigurations();
 
             if (!response.Success)
-                return ViewModelMappings.GetErrorViewModel<BackgroundTaskConfigurationsViewModel, BackgroundTaskConfigurationDto[]>(response);
+            {
+                return ViewModelMappings
+                    .GetErrorViewModel<BackgroundTaskConfigurationsViewModel, BackgroundTaskConfigurationDto[]>(
+                        response);
+            }
 
             return new BackgroundTaskConfigurationsViewModel
             {
