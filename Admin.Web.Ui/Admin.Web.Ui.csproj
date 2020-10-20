@@ -13,7 +13,7 @@
     <ItemGroup>
       <PackageReference Include="Blazored.Modal" Version="5.1.0" />
       <PackageReference Include="Hub.Extensions" Version="1.0.0" />
-      <PackageReference Include="Hub.Web.HostBuilder" Version="1.0.4" />
+      <PackageReference Include="Hub.Web.HostBuilder" Version="1.0.5" />
     </ItemGroup>
 
 </Project>
