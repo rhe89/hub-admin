@@ -1,8 +1,0 @@
-﻿@page "/spreadsheet/settings"
-
-@using Admin.Services
-@using Admin.Integration
-
-@inject ISettingService<ISpreadsheetApiConnector> SettingsService
-
-<Admin.Web.Ui.Components.Settings.Table SettingService="@SettingsService" />

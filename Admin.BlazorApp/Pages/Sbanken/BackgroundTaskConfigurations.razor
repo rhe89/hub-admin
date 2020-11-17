@@ -1,0 +1,7 @@
+﻿@page "/sbanken/backgroundtaskconfigurations"
+@using Admin.Integration
+@using Admin.BlazorApp.Services
+
+@inject IBackgroundTaskConfigurationService<ISbankenApiConnector> BackgroundTaskConfigurationService
+
+<Admin.BlazorApp.Components.BackgroundTaskConfiguration.Table BackgroundTaskConfigurationService="@BackgroundTaskConfigurationService" />

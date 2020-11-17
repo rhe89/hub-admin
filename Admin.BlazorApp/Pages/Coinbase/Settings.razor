@@ -1,0 +1,7 @@
+﻿@page "/coinbase/settings"
+@using Admin.Integration
+@using Admin.BlazorApp.Services
+
+@inject ISettingService<ICoinbaseApiConnector> SettingsService
+
+<Admin.BlazorApp.Components.Settings.Table SettingService="@SettingsService" />

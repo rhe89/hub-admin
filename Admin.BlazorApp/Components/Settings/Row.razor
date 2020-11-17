@@ -1,0 +1,83 @@
+﻿@using System.Runtime.CompilerServices
+@using Admin.BlazorApp.Services
+@using Admin.BlazorApp.ViewModel
+@using Admin.Integration
+
+@typeparam TApiClient
+
+@if (SettingViewModel == null)
+{
+    return;
+}
+
+<tr>
+    <td style="width:20%;" class="vertical-align-middle">
+        <p class="mb-0">
+            @SettingViewModel.Key
+        </p>
+    </td>
+    <td style="width:80%;">
+        @if (_edit)
+        {
+            <p class="mb-0">    
+                @if (SettingViewModel.Value is string text)
+                {
+                    <input class="form-control setting-value" @oninput="OnValueChanged" type="text" value="@text"/>
+                }
+                else if (SettingViewModel.Value is DateTime date)
+                {
+                    <input class="form-control setting-value" @oninput="OnValueChanged" type="date" value="@date"/>
+                }
+                else if (SettingViewModel.Value is int number)
+                {
+                    <input class="form-control setting-value" @oninput="OnValueChanged" type="number" value="@number"/>
+                }
+                <div class="setting-buttons">
+                    <button class="btn btn-success" @onclick="@(async () => await Save())">
+                        <span class="oi oi-check"></span>
+                    </button>
+                    <button class="btn btn-danger" @onclick="ToggleEdit">
+                        <span class="oi oi-x"></span>
+                    </button>
+                </div>
+            </p>
+        }
+        else
+        {
+            <p class="setting-view mb-0">
+                <span class="text-ellipsis setting-value vertical-align-middle">
+                    @SettingViewModel.Value
+                </span>
+                <div class="setting-buttons">
+                    <button class="btn btn-primary" @onclick="ToggleEdit"><span class="oi oi-pencil"></span></button>
+                </div>
+            </p>
+        }
+    </td>
+</tr>
+    
+@code {
+    [Parameter]
+    public SettingViewModel SettingViewModel { get; set; }
+    
+    [Parameter]
+    public ISettingService<TApiClient> SettingService { get; set; }
+
+    private bool _edit;
+
+    private void ToggleEdit()
+    {
+        _edit = !_edit;
+    }
+
+    private void OnValueChanged(ChangeEventArgs e)
+    {
+        SettingViewModel.Value = e.Value;
+    }
+
+    private async Task Save()
+    {
+        await SettingService.UpdateSetting(SettingViewModel.Key, SettingViewModel.Value);
+        ToggleEdit();
+    }
+}

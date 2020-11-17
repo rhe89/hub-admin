@@ -1,8 +1,0 @@
-﻿@page "/sbanken/settings"
-
-@using Admin.Services
-@using Admin.Integration
-
-@inject ISettingService<ISbankenApiConnector> SettingsService
-
-<Admin.Web.Ui.Components.Settings.Table SettingService="@SettingsService" />

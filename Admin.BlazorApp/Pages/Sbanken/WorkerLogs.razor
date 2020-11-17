@@ -1,0 +1,8 @@
+﻿@page "/sbanken/workerlogs"
+@page "/"
+@using Admin.Integration
+@using Admin.BlazorApp.Services
+
+@inject IWorkerLogService<ISbankenApiConnector> WorkerLogService
+
+<Admin.BlazorApp.Components.WorkerLogs.Table WorkerLogService="@WorkerLogService" />

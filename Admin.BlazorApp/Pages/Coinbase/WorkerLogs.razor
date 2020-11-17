@@ -1,0 +1,7 @@
+﻿@page "/coinbase/workerlogs"
+@using Admin.Integration
+@using Admin.BlazorApp.Services
+
+@inject IWorkerLogService<ICoinbaseApiConnector> WorkerLogService
+
+<Admin.BlazorApp.Components.WorkerLogs.Table WorkerLogService="@WorkerLogService" />

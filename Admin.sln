@@ -1,14 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.Web.Ui", "Admin.Web.Ui\Admin.Web.Ui.csproj", "{A827FE8B-43E8-4F71-9703-EA5FA873E708}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.BlazorApp", "Admin.BlazorApp\Admin.BlazorApp.csproj", "{A827FE8B-43E8-4F71-9703-EA5FA873E708}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.Integration", "Admin.Integration\Admin.Integration.csproj", "{4D0F2522-2BB3-430B-ADCC-97122675A9E3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{93585C0E-2EC0-4C51-AD47-4A8CABB795E0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.ViewModels", "Admin.ViewModels\Admin.ViewModels.csproj", "{C9AF14CE-E215-4D1A-B581-A22FA5528C40}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.Services", "Admin.Services\Admin.Services.csproj", "{E70B1189-A680-470A-A8D1-53A43111CC6C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hub.Web.BlazorServer", "..\hub-shared\Hub.Web\Hub.Web.BlazorServer\Hub.Web.BlazorServer.csproj", "{C641BCC1-B635-4256-8F9A-650B702FC2A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,16 +20,11 @@ Global
 		{4D0F2522-2BB3-430B-ADCC-97122675A9E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D0F2522-2BB3-430B-ADCC-97122675A9E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D0F2522-2BB3-430B-ADCC-97122675A9E3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C9AF14CE-E215-4D1A-B581-A22FA5528C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9AF14CE-E215-4D1A-B581-A22FA5528C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9AF14CE-E215-4D1A-B581-A22FA5528C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9AF14CE-E215-4D1A-B581-A22FA5528C40}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E70B1189-A680-470A-A8D1-53A43111CC6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E70B1189-A680-470A-A8D1-53A43111CC6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E70B1189-A680-470A-A8D1-53A43111CC6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E70B1189-A680-470A-A8D1-53A43111CC6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C641BCC1-B635-4256-8F9A-650B702FC2A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C641BCC1-B635-4256-8F9A-650B702FC2A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C641BCC1-B635-4256-8F9A-650B702FC2A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C641BCC1-B635-4256-8F9A-650B702FC2A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{A827FE8B-43E8-4F71-9703-EA5FA873E708} = {93585C0E-2EC0-4C51-AD47-4A8CABB795E0}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Admin.Integration\Admin.Integration.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Blazored.Modal" Version="5.1.0" />
+      <PackageReference Include="Hub.Extensions" Version="1.0.0" />
+      <PackageReference Include="Hub.Web.BazorServer" Version="1.0.4" />
+    </ItemGroup>
+
+</Project>

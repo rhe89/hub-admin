@@ -1,8 +1,0 @@
-﻿@page "/spreadsheet/backgroundtaskconfigurations"
-
-@using Admin.Services
-@using Admin.Integration
-
-@inject IBackgroundTaskConfigurationService<ISpreadsheetApiConnector> BackgroundTaskConfigurationService
-
-<Admin.Web.Ui.Components.BackgroundTaskConfiguration.Table BackgroundTaskConfigurationService="@BackgroundTaskConfigurationService" />

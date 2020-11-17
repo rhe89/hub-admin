@@ -1,0 +1,80 @@
+﻿@using System.Runtime.CompilerServices
+@using Admin.BlazorApp.Services
+@using Admin.BlazorApp.ViewModel
+@using Admin.Integration
+@using Hub.Extensions
+@using Hub.Storage.Core.Dto
+
+@typeparam TApiClient
+
+    <tr>
+        <td style="width:40%;"  class="vertical-align-middle">
+            <p class="mb-0">
+                @BackgroundTaskConfigurationViewModel.Name
+            </p>
+        </td>
+        <td style="width:20%;" class="vertical-align-middle">
+            <p class="mb-0">
+                @BackgroundTaskConfigurationViewModel.LastRun.ToString("dd.MM.yyyy HH:mm:ss")
+            </p>
+        </td>
+        <td style="width:40%;min-width: 254px;">
+            @if (_edit)
+            {
+                <p class="mb-0">  
+                     <select class="form-control bg-task-value" @bind="BackgroundTaskConfigurationViewModel.RunIntervalType">
+                         @foreach (RunIntervalType runIntervalType in Enum.GetValues(typeof(RunIntervalType)))
+                         {
+                             <option value="@runIntervalType">@runIntervalType.GetEnumDisplayName()</option>
+                         }
+                     </select>
+                    <div class="bg-task-buttons">
+                        <button class="btn btn-success" @onclick="@(async () => await Save())">
+                            <span class="oi oi-check"></span>
+                        </button>
+                        <button class="btn btn-danger" @onclick="ToggleEdit">
+                            <span class="oi oi-x"></span>
+                        </button>
+                    </div>
+                </p>
+            }
+            else
+            {
+                <p class="bg-task-view mb-0">
+                    <span class="text-ellipsis bg-task-value vertical-align-middle">
+                        @BackgroundTaskConfigurationViewModel.RunIntervalType.GetEnumDisplayName()
+                    </span>
+                    <div class="bg-task-buttons">
+                        <button class="btn btn-primary" @onclick="ToggleEdit"><span class="oi oi-pencil"></span></button>
+                    </div>
+                </p>
+            }
+        </td>
+    </tr> 
+
+
+@code {
+    [Parameter]
+    public BackgroundTaskConfigurationViewModel BackgroundTaskConfigurationViewModel { get; set; }
+    
+    [Parameter]
+    public IBackgroundTaskConfigurationService<TApiClient> BackgroundTaskConfigurationService { get; set; }
+
+    private bool _edit;
+
+    private void ToggleEdit()
+    {
+        _edit = !_edit;
+    }
+
+    private void OnValueChanged(ChangeEventArgs e)
+    {
+        BackgroundTaskConfigurationViewModel.RunIntervalType = (RunIntervalType)e.Value;
+    }
+
+    private async Task Save()
+    {
+        await BackgroundTaskConfigurationService.UpdateRunIntervalType(BackgroundTaskConfigurationViewModel.Name, BackgroundTaskConfigurationViewModel.RunIntervalType);
+        ToggleEdit();
+    }
+}

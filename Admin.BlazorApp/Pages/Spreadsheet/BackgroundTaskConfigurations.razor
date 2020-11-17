@@ -1,0 +1,7 @@
+﻿@page "/spreadsheet/backgroundtaskconfigurations"
+@using Admin.Integration
+@using Admin.BlazorApp.Services
+
+@inject IBackgroundTaskConfigurationService<ISpreadsheetApiConnector> BackgroundTaskConfigurationService
+
+<Admin.BlazorApp.Components.BackgroundTaskConfiguration.Table BackgroundTaskConfigurationService="@BackgroundTaskConfigurationService" />

@@ -1,8 +1,0 @@
-﻿@page "/sbanken/backgroundtaskconfigurations"
-
-@using Admin.Services
-@using Admin.Integration
-
-@inject IBackgroundTaskConfigurationService<ISbankenApiConnector> BackgroundTaskConfigurationService
-
-<Admin.Web.Ui.Components.BackgroundTaskConfiguration.Table BackgroundTaskConfigurationService="@BackgroundTaskConfigurationService" />

@@ -1,0 +1,7 @@
+﻿@page "/spreadsheet/workerlogs"
+@using Admin.Integration
+@using Admin.BlazorApp.Services
+
+@inject IWorkerLogService<ISpreadsheetApiConnector> WorkerLogService
+
+<Admin.BlazorApp.Components.WorkerLogs.Table WorkerLogService="@WorkerLogService" />

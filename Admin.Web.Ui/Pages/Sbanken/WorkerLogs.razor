@@ -1,9 +1,0 @@
-﻿@page "/sbanken/workerlogs"
-@page "/"
-
-@using Admin.Services
-@using Admin.Integration
-
-@inject IWorkerLogService<ISbankenApiConnector> WorkerLogService
-
-<Admin.Web.Ui.Components.WorkerLogs.Table WorkerLogService="@WorkerLogService" />

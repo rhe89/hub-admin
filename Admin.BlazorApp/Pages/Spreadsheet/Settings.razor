@@ -1,0 +1,7 @@
+﻿@page "/spreadsheet/settings"
+@using Admin.Integration
+@using Admin.BlazorApp.Services
+
+@inject ISettingService<ISpreadsheetApiConnector> SettingsService
+
+<Admin.BlazorApp.Components.Settings.Table SettingService="@SettingsService" />

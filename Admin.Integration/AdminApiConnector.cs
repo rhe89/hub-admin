@@ -1,6 +1,6 @@
 using System.Net.Http;
 using System.Threading.Tasks;
-using Hub.Storage.Dto;
+using Hub.Storage.Core.Dto;
 using Hub.Web.Http;
 using Microsoft.Extensions.Logging;
 
