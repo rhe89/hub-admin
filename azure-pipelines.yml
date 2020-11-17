@@ -6,7 +6,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  group: hub
+  - group: hub
 
 steps:
 - task: Bash@3
