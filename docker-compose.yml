@@ -5,6 +5,6 @@ services:
         container_name: "admin_web"
         build: 
             context: ./
-            dockerfile: Admin.Web.Ui/Dockerfile
+            dockerfile: Admin.BlazorApp/Dockerfile
         image: "rhe89/hub-admin-web"
         
