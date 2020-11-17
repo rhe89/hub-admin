@@ -13,7 +13,7 @@ steps:
   displayName: "Create docker files"
   inputs:
     filePath: 'scripts/create_docker_files.sh'
-    arguments: '$($PAT)'
+    arguments: '$(PAT)'
 
 - task: DockerCompose@0
   displayName: "docker-compose build"
