@@ -5,15 +5,12 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-variables:
-- group: hub
-
 steps:
 - task: Bash@3
   displayName: "Create docker files"
   inputs:
     filePath: 'scripts/create_docker_files.sh'
-    arguments: '$(PAT)'
+    arguments: '$($PAT)'
 
 - task: DockerCompose@0
   displayName: "docker-compose build"
