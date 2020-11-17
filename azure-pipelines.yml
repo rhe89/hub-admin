@@ -1,11 +1,13 @@
 trigger:
 - main
 
+
 pool:
   vmImage: 'ubuntu-latest'
 
 variables:
   buildConfiguration: 'Release'
+  group: Hub
 
 steps:
 - task: Bash@3
