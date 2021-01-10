@@ -1,0 +1,7 @@
+﻿@page "/coinbase-pro/backgroundtaskconfigurations"
+@using Admin.Integration
+@using Admin.BlazorApp.Services
+
+@inject IBackgroundTaskConfigurationService<ICoinbaseProApiConnector> BackgroundTaskConfigurationService
+
+<Admin.BlazorApp.Components.BackgroundTaskConfiguration.Table BackgroundTaskConfigurationService="@BackgroundTaskConfigurationService" />

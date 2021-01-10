@@ -11,7 +11,8 @@
     <ItemGroup>
       <PackageReference Include="Blazored.Modal" Version="5.1.0" />
       <PackageReference Include="Hub.Extensions" Version="1.0.0" />
-      <PackageReference Include="Hub.Web.BazorServer" Version="1.0.5" />
+      <PackageReference Include="Hub.Web.BazorServer" Version="2.0.12" />
+      <PackageReference Include="Hub.Web.Http" Version="2.0.12" />
     </ItemGroup>
 
 </Project>

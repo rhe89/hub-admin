@@ -5,6 +5,6 @@ namespace Admin.Integration
 {
     public class CoinbaseApiConnector : AdminApiConnector, ICoinbaseApiConnector
     {
-        public CoinbaseApiConnector(HttpClient httpClient, ILogger<CoinbaseApiConnector> logger) : base(httpClient, logger, "CoinbaseApi") {}
+        public CoinbaseApiConnector(HttpClient httpClient) : base(httpClient, "CoinbaseApi") {}
     }
 }

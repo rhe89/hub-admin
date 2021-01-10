@@ -5,6 +5,6 @@ namespace Admin.Integration
 {
     public class SpreadsheetApiConnector : AdminApiConnector, ISpreadsheetApiConnector
     {
-        public SpreadsheetApiConnector(HttpClient httpClient, ILogger<SpreadsheetApiConnector> logger) : base(httpClient, logger, "SpreadsheetApi") {}
+        public SpreadsheetApiConnector(HttpClient httpClient) : base(httpClient, "SpreadsheetApi") {}
     }
 }

@@ -5,6 +5,6 @@ namespace Admin.Integration
 {
     public class SbankenApiConnector : AdminApiConnector, ISbankenApiConnector
     {
-        public SbankenApiConnector(HttpClient httpClient, ILogger<SbankenApiConnector> logger) : base(httpClient, logger, "SbankenApi") {}
+        public SbankenApiConnector(HttpClient httpClient) : base(httpClient, "SbankenApi") {}
     }
 }

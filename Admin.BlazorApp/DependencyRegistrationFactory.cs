@@ -25,6 +25,9 @@ namespace Admin.BlazorApp
             serviceCollection.AddHubHttpClient<ICoinbaseApiConnector, CoinbaseApiConnector>(client =>
                 client.BaseAddress = new Uri(configuration.GetValue<string>("COINBASE_API_HOST")));
             
+            serviceCollection.AddHubHttpClient<ICoinbaseProApiConnector, CoinbaseProApiConnector>(client =>
+                client.BaseAddress = new Uri(configuration.GetValue<string>("COINBASE_PRO_API_HOST")));
+            
             serviceCollection.AddHubHttpClient<ISpreadsheetApiConnector, SpreadsheetApiConnector>(client =>
                 client.BaseAddress = new Uri(configuration.GetValue<string>("SPREADSHEET_API_HOST")));
         }
@@ -38,6 +41,10 @@ namespace Admin.BlazorApp
             serviceCollection.AddTransient<ISettingService<ICoinbaseApiConnector>, SettingService<ICoinbaseApiConnector>>();
             serviceCollection.AddTransient<IWorkerLogService<ICoinbaseApiConnector>, WorkerLogService<ICoinbaseApiConnector>>();
             serviceCollection.AddTransient<IBackgroundTaskConfigurationService<ICoinbaseApiConnector>, BackgroundTaskConfigurationService<ICoinbaseApiConnector>>();
+            
+            serviceCollection.AddTransient<ISettingService<ICoinbaseProApiConnector>, SettingService<ICoinbaseProApiConnector>>();
+            serviceCollection.AddTransient<IWorkerLogService<ICoinbaseProApiConnector>, WorkerLogService<ICoinbaseProApiConnector>>();
+            serviceCollection.AddTransient<IBackgroundTaskConfigurationService<ICoinbaseProApiConnector>, BackgroundTaskConfigurationService<ICoinbaseProApiConnector>>();
             
             serviceCollection.AddTransient<ISettingService<ISpreadsheetApiConnector>, SettingService<ISpreadsheetApiConnector>>();
             serviceCollection.AddTransient<IWorkerLogService<ISpreadsheetApiConnector>, WorkerLogService<ISpreadsheetApiConnector>>();

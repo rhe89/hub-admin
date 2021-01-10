@@ -14,7 +14,7 @@ namespace Admin.Integration
         private const string UpdateBackgroundTaskConfigurationRunIntervalTypePath = "/api/backgroundtaskconfiguration/updaterunintervaltype";
         private const string UpdateSettingsPath = "/api/setting/update";
         
-        protected AdminApiConnector(HttpClient httpClient, ILogger<AdminApiConnector> logger, string friendlyApiName) : base(httpClient, logger, friendlyApiName)
+        protected AdminApiConnector(HttpClient httpClient, string friendlyApiName) : base(httpClient, friendlyApiName)
         {
         }
         
